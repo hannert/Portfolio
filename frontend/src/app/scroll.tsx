@@ -24,11 +24,16 @@ export default function Scroll({tabs}: { tabs: string[] }){
         console.log(activePage)
     }, [activePage])
 
-    
+    const variants = {
+        inactive: {opacity: 0.2},
+        animate: {
+            opacity: 1,
+            fontWeight:600,
+            fontSize:'24px',
 
-
-
-    return <Box>
+        }
+    }
+    return (<Box sx={{position:'absolute', bottom:0,}}>
         <Typography>
             Current Page: {currentPage}
         </Typography>
@@ -38,30 +43,22 @@ export default function Scroll({tabs}: { tabs: string[] }){
         <Box>
             {tabs.map((tabName) => {return <Box>
                 {
-                    "/" + tabName === currentPage ?
-                    <Link href={"/"+tabName}>
-                        <motion.div 
-                            initial={{opacity: 0.5}}
-                            animate={{ opacity: 1, fontWeight:600, fontSize: '24px'}}
-                            exit={{}}
-                        >
-                            {tabName} but awesome
-                            
-
-                        </motion.div>
-                    </Link>
-                    :
-                    <Link href={"/"+tabName}>
-                        <Typography>
-                            {tabName}
-                        </Typography>
-                    </Link>
+                <Link href={"/"+tabName}>
+                    <motion.div 
+                        variants={variants}
+                        initial='initial'
+                        animate={"/" + tabName === currentPage ? 'animate' : 'initial'}
+                        exit={{}}
+                    >
+                        {tabName}
+                        
+                    </motion.div>
+                </Link>
                 }
-                
             </Box>})}
         </Box>
         
-    </Box>  
+    </Box>)
 
 
 }
