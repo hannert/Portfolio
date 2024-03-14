@@ -33,26 +33,30 @@ export default function Scroll({tabs}: { tabs: string[] }){
 
         }
     }
-    return (<Box sx={{position:'absolute', bottom:0,}}>
-        <Typography>
+    return (<Box sx={{position:'fixed', bottom:40, height:'400px', color:'black'}}>
+        <Typography variant="caption">
+            debugging purposes
+        </Typography>
+        <Typography variant="h6">
             Current Page: {currentPage}
         </Typography>
-        <Typography>
-            Supplied props: {suppliedProps}
-        </Typography>
         <Box>
-            {tabs.map((tabName) => {return <Box>
+            {tabs.map((tabName) => {return <Box key="{tabName}">
                 {
                 <Link href={"/"+tabName}>
-                    <motion.div 
-                        variants={variants}
-                        initial='initial'
-                        animate={"/" + tabName === currentPage ? 'animate' : 'initial'}
-                        exit={{}}
-                    >
-                        {tabName}
+
+                        <Typography
+                            variant="subtitle2"
+                            component={motion.div}
+                            variants={variants}
+                            initial='initial'
+                            animate={"/" + tabName === currentPage ? 'animate' : 'initial'}
+                            exit={{}}
+                        >
+                            {tabName}
+                        </Typography>
                         
-                    </motion.div>
+                        
                 </Link>
                 }
             </Box>})}
