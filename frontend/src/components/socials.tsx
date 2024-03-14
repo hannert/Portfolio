@@ -1,7 +1,9 @@
-import CoffeeIcon from "@mui/icons-material/Coffee";
 import XIcon from "@mui/icons-material/X";
-import { ButtonGroup, IconButton } from "@mui/material";
+import { ButtonGroup, IconButton, SvgIcon } from "@mui/material";
 import Box from "@mui/material/Box";
+import CoffeeIcon from "./coffeeIcon";
+import DiscordIcon from "./discordIcon";
+import TwitchIcon from "./twitchIcon";
 
 export default function Socials() {
   return (
@@ -11,8 +13,20 @@ export default function Socials() {
           <XIcon></XIcon>
         </IconButton>
         <IconButton disableRipple>
-          <CoffeeIcon></CoffeeIcon>
+					<SvgIcon>
+						<CoffeeIcon></CoffeeIcon>
+					</SvgIcon>
         </IconButton>
+				<IconButton disableRipple>
+					<SvgIcon>
+						<DiscordIcon></DiscordIcon>
+					</SvgIcon>
+				</IconButton>
+				<IconButton disableRipple>
+					<SvgIcon>
+						<TwitchIcon></TwitchIcon>
+					</SvgIcon>
+				</IconButton>
       </ButtonGroup>
     </Box>
   );

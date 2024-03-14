@@ -1,12 +1,13 @@
 "use client";
 
-import { Typography } from "@mui/material";
+import { Tooltip, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
 export default function Scroll({ tabs }: { tabs: string[] }) {
   const [active, setActive] = useState(false);
   const [currentPage, setPage] = useState(usePathname());
@@ -39,6 +40,20 @@ export default function Scroll({ tabs }: { tabs: string[] }) {
         color: "black",
       }}
     >
+      <Link href="/">
+        <Tooltip title="Landing Page" placement="top">
+          <IconButton>
+            <Image
+              src={"/images/meatball.png"}
+              height={64}
+              width={64}
+              alt={"awesome"}
+            />
+          </IconButton>          
+        </Tooltip>
+
+      </Link>
+
       <Typography variant="caption">debugging purposes</Typography>
       <Typography variant="h6">Current Page: {currentPage}</Typography>
       <Box>

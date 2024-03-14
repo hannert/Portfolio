@@ -1,6 +1,9 @@
 "use client";
 import { createTheme } from "@mui/material";
 
+const iconHoverColor = "#dfebf9"
+
+
 const theme = createTheme({
   components: {
     MuiButtonBase: {
@@ -8,6 +11,16 @@ const theme = createTheme({
         disableRipple: true,
       },
     },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            fill: iconHoverColor
+          }
+        }
+      }
+    }
+
   },
   palette: {
     primary: {
@@ -21,8 +34,12 @@ const theme = createTheme({
     button: {
       fontFamily: "Montserrat",
       color: "#FFFFFF",
+      hover: {color:'red'},
     },
+
   },
+  
+
 });
 
 export default theme;

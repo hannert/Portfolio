@@ -1,13 +1,19 @@
+'use client'
+
+import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
-import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 export default function Page() {
   return (
+    <AnimatePresence>
+
+
     <Box
+      key="aboutPage"
       sx={{
         display: "flex",
         justifyContent: "center",
@@ -15,8 +21,11 @@ export default function Page() {
         maxWidth: "100%",
       }}
       component={motion.div}
+      initial={{x:-300, opacity:0}}
+      animate={{x:0, opacity:1}}
+      exit={{x:300, opacity:0}}
     >
-      <Card sx={{ width: "40%", height: "600px", backgrounDColor: "#f9eddf" }}>
+      <Card sx={{ width: "40%", height: "600px", backgrounDColor: "#f9eddf", minWidth: '600px'}} elevation={4}>
         <Container
           sx={{
             display: "flex",
@@ -28,12 +37,16 @@ export default function Page() {
             <Image
               src={"/images/winton.png"}
               height={200}
-              width={200}
+              width={400}
               alt={"awesome"}
             />
+            <Typography>
+              Hey
+            </Typography>
           </Box>
         </Container>
       </Card>
     </Box>
+    </AnimatePresence>
   );
 }
