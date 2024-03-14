@@ -7,22 +7,19 @@ import "./globals.css";
 import { Navgroup } from "./navgroup";
 import Scroll from "./scroll";
 
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
 import Socials from "@/components/socials";
-import theme from '../theme';
+import theme from "../theme";
 
 export const metadata: Metadata = {
   title: "pnutbutr",
   description: "page about pnutbutr",
 };
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 const tabs = ["about", "contact", "portfolio"];
-
-
-
 
 export default function RootLayout({
   children,
@@ -41,7 +38,6 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
-        
       </body>
     </html>
   );
