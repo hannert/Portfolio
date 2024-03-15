@@ -4,8 +4,8 @@ import { ThemeProvider } from "@mui/material";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Menu from "./menu";
 import { Navgroup } from "./navgroup";
-import Scroll from "./scroll";
 
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
@@ -32,7 +32,7 @@ export default function RootLayout({
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Scroll tabs={tabs}></Scroll>
+            <Menu tabs={tabs}></Menu>
             <Navgroup></Navgroup>
             <Socials></Socials>
             {children}

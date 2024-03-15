@@ -1,13 +1,8 @@
 import Link from "next/link";
+import ContactPage from "./contactPage";
 
 export default function Page() {
-    return <div>
-            <p>Hello from the contact component! 🥺
-            </p>
-
-            <Link href="/">
-                Click me to go back!
-            </Link>
-        </div>
-
+    return(
+        <ContactPage></ContactPage>
+    )
 }

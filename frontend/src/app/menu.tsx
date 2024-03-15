@@ -1,14 +1,17 @@
 "use client";
 
+import TestExit from "@/components/testAnimate";
 import { Tooltip, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-export default function Scroll({ tabs }: { tabs: string[] }) {
+
+
+export default function Menu({ tabs }: { tabs: string[] }) {
   const [active, setActive] = useState(false);
   const [currentPage, setPage] = useState(usePathname());
 
@@ -38,6 +41,7 @@ export default function Scroll({ tabs }: { tabs: string[] }) {
         bottom: "20vh",
         height: "400px",
         color: "black",
+        zIndex: 9999,
       }}
     >
       <Link href="/">
@@ -53,9 +57,6 @@ export default function Scroll({ tabs }: { tabs: string[] }) {
         </Tooltip>
 
       </Link>
-
-      <Typography variant="caption">debugging purposes</Typography>
-      <Typography variant="h6">Current Page: {currentPage}</Typography>
       <Box>
         {tabs.map((tabName) => {
           return (
@@ -80,6 +81,11 @@ export default function Scroll({ tabs }: { tabs: string[] }) {
           );
         })}
       </Box>
+      <AnimatePresence>
+      {
+        "/" === currentPage && <TestExit></TestExit>
+      }
+      </AnimatePresence>
     </Box>
   );
 }
