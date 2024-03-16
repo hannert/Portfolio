@@ -1,5 +1,5 @@
 "use client";
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 
 const iconHoverColor = "#dfebf9"
 
@@ -19,7 +19,8 @@ const theme = createTheme({
           }
         }
       }
-    }
+    }, 
+
 
   },
   palette: {
@@ -42,4 +43,7 @@ const theme = createTheme({
 
 });
 
-export default theme;
+const finalTheme = responsiveFontSizes(theme);
+
+
+export default finalTheme;

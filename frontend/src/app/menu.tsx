@@ -60,7 +60,7 @@ export default function Menu({ tabs }: { tabs: string[] }) {
       <Box>
         {tabs.map((tabName) => {
           return (
-            <Box key="{tabName}">
+            <Box key={tabName}>
               {
                 <Link href={"/" + tabName}>
                   <Typography

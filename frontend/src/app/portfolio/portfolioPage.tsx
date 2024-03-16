@@ -25,9 +25,8 @@ export default function PortfolioPage() {
       <Card
         sx={{
           width: "80%",
-          height: "600px",
           backgrounDColor: "#f9eddf",
-          minWidth: "600px",
+          
         }}
         elevation={4}
       >

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-const tabs = ["about", "contact", "portfolio"];
+const tabs = ["about", "portfolio", "contact"];
 
 export default function RootLayout({
   children,

@@ -41,11 +41,11 @@ export default function ContactPage() {
           <Box>
             <Image
               src={"/images/winton.png"}
-              height={200}
-              width={400}
+              height={100}
+              width={50}
               alt={"awesome"}
             />
-            <Typography>Hey</Typography>
+            <Typography variant="h4">Contact</Typography>
           </Box>
         </Container>
       </Card>
