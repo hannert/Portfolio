@@ -18,9 +18,17 @@ export default function SplashCard() {
   };
 
   const item = {
-    hidden: { y: -50, opacity: 0 },
-    show: { y: 0, opacity: 1 },
+    hidden: {
+      y: -50,
+      opacity: 0,
+    },
+    show: {
+      y: [0, -2, 0],
+      opacity: 1,
+    },
   };
+
+  const internal = {};
 
   return (
     <Box
@@ -30,7 +38,7 @@ export default function SplashCard() {
         right: "64px",
         backgroundColor: "rgb(202,202,202,0.4)",
         backdropFilter: "blur(2px)",
-				borderRadius: "8px"
+        borderRadius: "8px",
       }}
       component={motion.div}
       initial={{ opacity: 0 }}
@@ -44,13 +52,53 @@ export default function SplashCard() {
         animate="show"
       >
         <ListItem component={motion.li} variants={item}>
-          <Typography variant="h6" sx={{fontFamily:"Montserrat"}}> Item number ONE </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              fontFamily: "Montserrat",
+              textShadow: "1px 1px 2px pink",
+            }}
+            component={motion.div}
+            animate={{ y: [0, -1, 0] }}
+            transition={{ repeat: Infinity }}
+          >
+            {" "}
+            Item number ONE{" "}
+          </Typography>
         </ListItem>
         <ListItem component={motion.li} variants={item}>
-          <Typography variant="h6" sx={{fontFamily:"Montserrat"}}> Item number TWO </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              fontFamily: "Montserrat",
+              textShadow: "1px 1px 2px pink",
+              padding:"8px 8px 8px 8px",
+              backgroundColor: "black",
+              boxShadow: "2px 2px 4px white",
+              borderRadius: "4px"
+            }}
+            component={motion.div}
+            animate={{ y: [0, -1, 0] }}
+            transition={{ repeat: Infinity }}
+          >
+            {" "}
+            Item number TWO{" "}
+          </Typography>
         </ListItem>
         <ListItem component={motion.li} variants={item}>
-          <Typography variant="h6" sx={{fontFamily:"Montserrat"}}> Item number THREE </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              fontFamily: "Montserrat",
+              textShadow: "1px 1px 2px pink",
+            }}
+            component={motion.div}
+            animate={{ y: [0, -1, 0] }}
+            transition={{ repeat: Infinity }}
+          >
+            {" "}
+            Item number THREE{" "}
+          </Typography>
         </ListItem>
       </List>
     </Box>

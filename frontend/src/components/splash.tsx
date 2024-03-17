@@ -40,7 +40,7 @@ export default function Splash() {
         width={0}
         height={0}
         sizes="80vh"
-        style={{ width: "auto", height: "80%", maxWidth: "100vw" }}
+        style={{ width: "auto", height: "auto", maxWidth: "100vw" }}
         alt={"awesome"}
       />
     </Box>
