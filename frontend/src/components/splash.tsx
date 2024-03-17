@@ -36,12 +36,13 @@ export default function Splash() {
 			onAnimationComplete={() => setPlayed(true)}
     >
       <Image
-        src={"/images/splashart-demo.png"}
+        src={"/images/splashart-demoWEBP.webp"}
         width={0}
         height={0}
         sizes="80vh"
         style={{ width: "auto", height: "auto", maxWidth: "100vw" }}
         alt={"awesome"}
+        priority
       />
     </Box>
   );
