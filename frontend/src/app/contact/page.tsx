@@ -1,8 +1,11 @@
-import Link from "next/link";
+import Box from "@mui/material/Box";
 import ContactPage from "./contactPage";
 
 export default function Page() {
     return(
-        <ContactPage></ContactPage>
+        <Box sx={{display:"flex", justifyContent:"center", alignItems:"center", maxWidth:"100%"}}>
+            <ContactPage></ContactPage>
+        </Box>
+        
     )
 }
