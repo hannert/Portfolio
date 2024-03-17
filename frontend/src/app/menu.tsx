@@ -10,14 +10,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-
 export default function Menu({ tabs }: { tabs: string[] }) {
   const [active, setActive] = useState(false);
   const [currentPage, setPage] = useState(usePathname());
+  const [width, setWidth] = useState(window.innerWidth);
 
   const activePage = usePathname();
 
   const suppliedProps = tabs.join(" ");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+  }, []);
 
   // Change the active page styling when we change the page
   useEffect(() => {
@@ -34,58 +42,51 @@ export default function Menu({ tabs }: { tabs: string[] }) {
       fontSize: "24px",
     },
   };
-  return (
-    <Box
-      sx={{
-        position: "fixed",
-        bottom: "20vh",
-        height: "400px",
-        color: "black",
-        zIndex: 9999,
-      }}
-    >
-      <Link href="/">
-        <Tooltip title="Landing Page" placement="top">
-          <IconButton>
-            <Image
-              src={"/images/meatball.png"}
-              height={64}
-              width={64}
-              alt={"awesome"}
-            />
-          </IconButton>          
-        </Tooltip>
 
-      </Link>
-      <Box>
-        {tabs.map((tabName) => {
-          return (
-            <Box key={tabName}>
-              {
-                <Link href={"/" + tabName}>
-                  <Typography
-                    variant="subtitle2"
-                    component={motion.div}
-                    variants={variants}
-                    initial="initial"
-                    animate={
-                      "/" + tabName === currentPage ? "animate" : "initial"
-                    }
-                    exit={{}}
-                  >
-                    {tabName}
-                  </Typography>
-                </Link>
-              }
-            </Box>
-          );
-        })}
-      </Box>
-      <AnimatePresence>
-      {
-        "/" === currentPage && <TestExit></TestExit>
-      }
-      </AnimatePresence>
+  return (
+    <Box>
+      {width > 600 ? (
+        <Box
+          sx={{
+            position: "fixed",
+            bottom: "10vh",
+            height: "400px",
+            color: "black",
+            zIndex: 9999,
+          }}
+        >
+          <Box>
+            {tabs.map((tabName) => {
+              return (
+                <Box key={tabName}>
+                  {
+                    <Link href={"/" + tabName}>
+                      <Typography
+                        sx={{ fontFamily: "montserrat" }}
+                        variant="subtitle2"
+                        component={motion.div}
+                        variants={variants}
+                        initial="initial"
+                        animate={
+                          "/" + tabName === currentPage ? "animate" : "initial"
+                        }
+                        exit={{}}
+                      >
+                        {tabName}
+                      </Typography>
+                    </Link>
+                  }
+                </Box>
+              );
+            })}
+          </Box>
+          <AnimatePresence>
+            {"/" === currentPage && <TestExit></TestExit>}
+          </AnimatePresence>
+        </Box>
+      ) : (
+        <></>
+      )}
     </Box>
   );
 }
