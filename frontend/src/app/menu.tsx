@@ -13,13 +13,15 @@ import { useEffect, useState } from "react";
 export default function Menu({ tabs }: { tabs: string[] }) {
   const [active, setActive] = useState(false);
   const [currentPage, setPage] = useState(usePathname());
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(0);
 
   const activePage = usePathname();
 
   const suppliedProps = tabs.join(" ");
 
   useEffect(() => {
+    setWidth(window.innerWidth);
+
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
