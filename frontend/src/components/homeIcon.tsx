@@ -41,6 +41,7 @@ export default function HomeIcon() {
       }}
       component={motion.div}
       variants={variants}
+      initial="inactive"
       animate={currentPage === "/" ? "inactive" : "active"}
     >
       <Link href="/">
