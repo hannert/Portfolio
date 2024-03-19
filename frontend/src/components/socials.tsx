@@ -10,31 +10,22 @@ import {
 	SvgIcon,
 } from "@mui/material";
 import Box from "@mui/material/Box";
-import { useEffect, useState } from "react";
 import CoffeeIcon from "./coffeeIcon";
 import DiscordIcon from "./discordIcon";
 import TwitchIcon from "./twitchIcon";
 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { useWindowSize } from "@uidotdev/usehooks";
 
 
 export default function Socials() {
-  const [width, setWidth] = useState(0);
+  const size = useWindowSize();
 
-  useEffect(() => {
-		setWidth(window.innerWidth);
-		
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-  }, []);
 
   return (
     <Box sx={{ position: "fixed", top: "0", right: "0" }}>
-      {width > 600 ? (
+      {Number(size.width) > 600 ? (
         <ButtonGroup orientation="vertical" size="small">
           <IconButton disableRipple>
             <XIcon></XIcon>

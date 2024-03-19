@@ -1,33 +1,20 @@
 "use client";
 
 import TestExit from "@/components/testAnimate";
-import { Tooltip, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+import { useWindowSize } from "@uidotdev/usehooks";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Menu({ tabs }: { tabs: string[] }) {
-  const [active, setActive] = useState(false);
   const [currentPage, setPage] = useState(usePathname());
-  const [width, setWidth] = useState(0);
-
   const activePage = usePathname();
 
-  const suppliedProps = tabs.join(" ");
+  const size = useWindowSize();
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-  }, []);
 
   // Change the active page styling when we change the page
   useEffect(() => {
@@ -47,7 +34,7 @@ export default function Menu({ tabs }: { tabs: string[] }) {
 
   return (
     <Box>
-      {width > 600 ? (
+      {Number(size.width) > 600 ? (
         <Box
           sx={{
             position: "fixed",
