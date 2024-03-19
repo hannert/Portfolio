@@ -20,6 +20,13 @@ const theme = createTheme({
         }
       }
     }, 
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "FDF2E8",
+        }
+      }
+    }
 
 
   },
@@ -30,12 +37,14 @@ const theme = createTheme({
     secondary: {
       main: "#dfebf9",
     },
+    text: {
+      primary: '#3a2c2a',
+    },
   },
   typography: {
     button: {
       fontFamily: "Montserrat",
-      color: "#FFFFFF",
-      hover: {color:'red'},
+      color: "#707866",
     },
 
   },

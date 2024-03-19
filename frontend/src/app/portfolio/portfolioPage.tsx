@@ -5,9 +5,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import { motion } from "framer-motion";
 
-
 export default function PortfolioPage() {
-
   return (
     <Box
       key="aboutPage"
@@ -25,58 +23,40 @@ export default function PortfolioPage() {
       <Card
         sx={{
           width: "80%",
-          backgrounDColor: "#f9eddf",
-          
         }}
         elevation={4}
       >
-        <ImageList variant="masonry" cols={3} gap={8}>
+        <ImageList
+          variant="masonry"
+          cols={3}
+          gap={8}
+          sx={{
+            paddingLeft: "12px",
+            paddingRight: "12px",
+          }}
+        >
           <ImageListItem>
-            <img
-              src={"/images/winton.png"}
-              alt={"awesome"}
-            />
+            <img src={"/images/winton.png"} alt={"awesome"} />
           </ImageListItem>
           <ImageListItem>
-            <img
-              src={"/images/meatball.png"}
-              alt={"awesome"}
-            />
+            <img src={"/images/meatball.png"} alt={"awesome"} />
           </ImageListItem>
           <ImageListItem>
-            <img
-              src={"/images/headdent.png"}
-              alt={"awesome"}
-            />
+            <img src={"/images/headdent.png"} alt={"awesome"} />
           </ImageListItem>
           <ImageListItem>
-            <img
-              src={"/images/meatball.png"}
-              alt={"awesome"}
-            />
+            <img src={"/images/meatball.png"} alt={"awesome"} />
           </ImageListItem>
           <ImageListItem>
-            <img
-              src={"/images/headdent.png"}
-              alt={"awesome"}
-            />
+            <img src={"/images/headdent.png"} alt={"awesome"} />
           </ImageListItem>
           <ImageListItem>
-            <img
-              src={"/images/meatball.png"}
-              alt={"awesome"}
-            />
+            <img src={"/images/meatball.png"} alt={"awesome"} />
           </ImageListItem>
           <ImageListItem>
-            <img
-              src={"/images/headdent.png"}
-              alt={"awesome"}
-            />
+            <img src={"/images/headdent.png"} alt={"awesome"} />
           </ImageListItem>
         </ImageList>
-
-
-
       </Card>
     </Box>
   );
