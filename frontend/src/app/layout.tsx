@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en">
       {/* Have a shared layout or template(?) here! */}
       <body className={roboto.className}>
-        <AppRouterCacheProvider>
+        {/* <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <HomeIcon></HomeIcon>
             <Menu tabs={tabs}></Menu>
@@ -44,7 +44,7 @@ export default function RootLayout({
             <Socials></Socials>
             {children}
           </ThemeProvider>
-        </AppRouterCacheProvider>
+        </AppRouterCacheProvider> */}
       </body>
     </html>
   );
